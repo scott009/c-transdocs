@@ -58,7 +58,7 @@ Claude Code makes decisions about:
 
 ### Step 1: Run Context Loading Script
 ```bash
-/home/scott/gitrepos/rdgtrans/read_docs.sh
+/home/scott/gitrepos/rdgtrans/scripts/read_docs.sh
 ```
 
 ### Step 2: Read sharedContext.md FIRST

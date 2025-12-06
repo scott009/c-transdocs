@@ -90,6 +90,19 @@ https://github.com/scott009/rdgtrans
 - No AI agent may commit/push without explicit approval
 
 ## 5. Important Sublocations
+### Operational Scripts (scripts)
+```
+/home/scott/gitrepos/rdgtrans/scripts
+```
+
+**Purpose:** Shell scripts for initialization, backup, and operational tasks
+
+**Contents:**
+- `read_docs.sh` - Claude Code initialization script
+- `copilot_init.sh` - GitHub Copilot initialization script
+- `backup.sh` - Project backup script
+- `README.md` - Script documentation with Copilot permissions
+
 ### Python Utilities (pyhome)
 ```
 /home/scott/gitrepos/rdgtrans/py
@@ -177,6 +190,7 @@ AI agents should NOT modify this directory unless explicitly told.
 
 AI Agents May Work In:
 - `/home/scott/gitrepos/rdgtrans`
+- `/home/scott/gitrepos/rdgtrans/scripts` (run scripts, not modify)
 - `/home/scott/gitrepos/rdgtrans/py`
 - `/home/scott/gitrepos/rdgtrans/corrections`
 - dochome (docs)
@@ -213,6 +227,7 @@ AI Agents MAY NOT Touch Unless Instructed:
 | Term | Meaning |
 |------|---------|
 | projhome | Root of rdgtrans |
+| scripts | Operational shell scripts (initialization, backup) |
 | pyhome | Python utilities |
 | dochome | Documentation folder |
 | workingfiles | Temporary working documents (subdirectory of dochome) |
@@ -231,6 +246,11 @@ AI Agents MAY NOT Touch Unless Instructed:
 - Improve clarity and maintainability  
 
 ## Version
-sharedContext.md — Version 1.1 (2025-12-04)
+sharedContext.md — Version 1.2 (2025-12-06)
+- Added scripts directory to Important Sublocations
+- Added scripts to Shared Vocabulary
+- Updated AI Agent permissions to include scripts directory
+
+Previous: Version 1.1 (2025-12-04)
 - Added Core Project Files section (workmaster.json and presentation.json)
 - Added jmaster and presmaster to vocabulary table

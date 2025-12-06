@@ -67,7 +67,7 @@ You are the **junior partner** in this project. Your job is to:
 
 ### Step 1: Run Context Loading Script
 ```bash
-/home/scott/gitrepos/rdgtrans/copilot_init.sh
+/home/scott/gitrepos/rdgtrans/scripts/copilot_init.sh
 ```
 
 ### Step 2: Read sharedContext.md FIRST
