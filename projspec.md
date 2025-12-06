@@ -34,8 +34,10 @@ The Recovery Dharma Translation Project manages translations of the Recovery Dha
 
 ## Directory Structure
 
+**Note:** The structure below illustrates the project layout at **projhome**. For the current authoritative path, see sharedContext.md.
+
 ```
-/home/scott/gitrepos/rdgtrans/
+{projhome}/
 ├── workmaster.json           # Central tracking/metadata file
 ├── lmasters/                 # Language master files (definitive translations)
 │   ├── RDGBook_English.md
@@ -61,7 +63,7 @@ The Recovery Dharma Translation Project manages translations of the Recovery Dha
 ### workmaster.json
 
 **Purpose:** Central tracking and metadata file
-**Location:** `/home/scott/gitrepos/rdgtrans/workmaster.json`
+**Location:** `{projhome}/workmaster.json` (see sharedContext.md for projhome path)
 **Size:** ~227KB
 
 The master coordination file that:
@@ -74,7 +76,7 @@ The master coordination file that:
 ### Language Master Files (lmasters/)
 
 **Purpose:** Definitive language translation files
-**Location:** `/home/scott/gitrepos/rdgtrans/lmasters/`
+**Location:** `{projhome}/lmasters/` (see sharedContext.md for projhome path)
 **Format:** Markdown (.md)
 
 | File | Language | Size | Status |
@@ -91,30 +93,25 @@ The master coordination file that:
 
 ## Path References
 
-### Local Paths (WSL)
+**All current, authoritative paths and repository information are defined in sharedContext.md.**
 
-```
-Project Home:    /home/scott/gitrepos/rdgtrans
-Language Masters: /home/scott/gitrepos/rdgtrans/lmasters
-Archive:         /home/scott/gitrepos/rdgtrans/archive
-```
+This project specification uses the following vocabulary terms defined in sharedContext.md:
 
-### Windows Paths
+| Term | Purpose | Defined In |
+|------|---------|------------|
+| **projhome** | Project root directory | sharedContext.md §3 |
+| **lmasters** | Language master files location | sharedContext.md §10 |
+| **archive** | Backup and historical versions | sharedContext.md §5 |
+| **dochome** | Documentation directory | sharedContext.md §6 |
+| **pyhome** | Python utilities | sharedContext.md §5 |
 
-```
-Project Home:    \\wsl$\Ubuntu\home\scott\gitrepos\rdgtrans
-Language Masters: \\wsl$\Ubuntu\home\scott\gitrepos\rdgtrans\lmasters
-Documentation:   C:\Users\scott\Documents\AIProjects\Markdown\RDGTranslations
-```
+**For current path values and git repository information, consult sharedContext.md.**
 
-### Planned Git Repositories
+### Directory Structure Reference
 
-| Name | Purpose | Remote | Local |
-|------|---------|--------|-------|
-| rdgtrans | Translation project | https://github.com/scott009/rdgtrans | /home/scott/gitrepos/rdgtrans |
-| contentServer | Content server | https://github.com/scott009/contentServer | (TBD) |
-
-**Note:** Remote git integration pending - not yet configured
+The canonical directory structure is maintained at **projhome** (see sharedContext.md for current path).
+Language master files are located in the **lmasters** subdirectory.
+Git repository information (remotes, branches) is defined in sharedContext.md §4.
 
 ---
 

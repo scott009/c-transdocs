@@ -1,52 +1,101 @@
 # Presentation Layer
+
 ## Description
-- As the name implies, the presentation lay for the rdg translation project is concerned with how the material created in the deeper more  technically complex
-and AI driven aspects of the project are presented to my fellow human beings.  There IS still a technical/ production side to this project layer.  Much of this focuses on how to effectively guide AI agents to quickly and effectively create human friendly interfaces (mostly web pages) 
+
+The **Presentation Layer** defines how translated content is displayed and how users interact with it.
+
+### Separation of Concerns
+
+This project maintains a clear separation between:
+
+- **Content Layer** - The book text itself (English, Thai, Korean, Vietnamese, Japanese, Chinese)
+  - Managed in: `lmasters/` language files
+  - Tracked in: `workmaster.json` (jmaster)
+
+- **Presentation Layer** - How that content is visually displayed and behaviorally interactive
+  - Defined in: `presentation.json` (presmaster)
+  - Includes: UI labels, form elements, buttons, navigation, layout structure
+
+### Two Aspects of Presentation
+
+**1. Visual Presentation**
+- Layout and structure
+- Styling and typography
+- Responsive design for different devices
+
+**2. Interactive Behavior**
+- Button actions and form submissions
+- Navigation and user flows
+- Dynamic UI elements
+
+### Critical Distinction
+
+**This layer describes the CONTAINERS that house documents, not the documents themselves.**
+
+For example:
+- ✅ Presentation layer: "Submit" button, "Email Address" field label, page headers
+- ❌ NOT presentation layer: Chapter 9 text, paragraph content, book titles
+
+### Multilingual UI
+
+The presentation layer itself is multilingual - UI elements are translated into all supported languages so users can interact with the interface in their preferred language.
 
 ## Detail
 
-### Method
-create a json file that is referenced from within jmaster
-add a presentation object to jmaster/metadata  
- Understand that this Discusses the containers that HOuse Documents and not the documents themselves   
- this understanding is crucial 
+### Implementation Method
 
+**Step 1:** Create `presentation.json` (presmaster) containing:
+- UI element structure (sections, blocks, fields)
+- Translatable UI strings in all languages
+- Element IDs and metadata
 
+**Step 2:** Reference presmaster from workmaster.json:
+```json
+{
+  "pmaster": "presentation.json"
+}
+```
 
-Add a section to hold tranlations of document headings  
+**Step 3:** UI strings organized by language:
+- English UI labels
+- Thai UI labels
+- Japanese, Korean, Chinese, Vietnamese UI labels  
 
    
-#### DataStructure 
-##### jmaster modification 
-  {
-  "pmaster": "presentation.json",
-
-  "presentation_paths": {
-    "wslpath": "/home/scott/gitrepos/RDGAsianMD",
-    "winoutput": "C:\\Users\\scott\\Documents\\RecoveryDharma\\RDGBook\\output_V1\\",
-    "wslwin": "\\\\wsl$\\Ubuntu\\home\\scott\\gitrepos\\REGAsianMD",
-    "workmasters": "\\\\wsl$\\Ubuntu\\home\\scott\\gitrepos\\RDGAsianMD\\workmasters",
-    "backup": "\\\\wsl$\\Ubuntu\\home\\scott\\gitrepos\\REGAsianMD\\workmasters\\archive",
-    "pyhome": "/home/scott/gitrepos/rdgtrans/py",
-    "dochome": "C:/Users/scott/Documents/AIProjects/Markdown/RDGTranslations",
-    "newhome": "\\\\wsl$\\Ubuntu\\home\\scott\\gitrepos\\rdgtrans"
-  }
+#### DataStructure
+##### jmaster modification
+```json
+{
+  "presmaster": "presentation.json"
 }
+```
+
+**Note:** All presentation paths are defined in **sharedContext.md**.
+
+Use the following vocabulary terms when referencing paths:
+- **projhome** - Project root directory
+- **showoff** - Public output directory (local and remote)
+- **pyhome** - Python utilities directory
+- **dochome** - Documentation directory
+- **lmasters** - Language master files location
+
+See sharedContext.md for current authoritative path values.
 
 ##### pmaster
 
 
 ### References
-- opguide  this document contains relevant path and file information.  
-C:/Users/scott/Documents/AIProjects/Markdown/RDGTranslations/opguide.md
+- **sharedContext.md** - Authoritative source for all paths, repositories, and project structure
+- **ClaudeGuide.md** - Claude Code operational guide (formerly opguide.md)
+- **projspec.md** - Technical specification of the translation system
 
 ### linklist
-- This is just a simple list of URLS  that show the addresses of the RDG Book translated into different language   
-#### Linkpaths   
-- use local to build accurate file references 
-**local**:   C:\Users\scott\Documents\RecoveryDharma\RDGBook\output_V1\docs
-- Use remote to build accurate URLS
-**remote**: https://scott009.github.io/showoff 
+- This is just a simple list of URLs that show the addresses of the RDG Book translated into different languages
+#### Linkpaths
+- Use local to build accurate file references
+**local**: `{showoff}/docs` (see sharedContext.md §7 for current path)
+- Use remote to build accurate URLs
+**remote**: See sharedContext.md §7 for showoff remote GitHub Pages URL 
   
 
 #### STYLEFILE
@@ -82,7 +131,7 @@ rdgVietnamesePrint.html
 ====================================
 The Recovery Dharmal Translastion Project 
 . What are we writing today?  
-##   What kind of Docuement
+##   What kind of Document
 I want to create a web page  
 It will be a simple html document that functions as the map to the existing content I've already generated. 
 It will use my defulat sstyesheet  
