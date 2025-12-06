@@ -1,5 +1,18 @@
 # GitHub Copilot Operations Guide
-<!--  Language Translation – CopilotGuide –  12/5/2025  -->
+<!--  Language Translation – CopilotGuide –  12/06/2025  -->
+
+## Quick Start - Run This First
+
+**Initialization Script:**
+```bash
+/home/scott/gitrepos/rdgtrans/scripts/copilot_init.sh
+```
+
+Then read `sharedContext.md` before proceeding.
+
+**Note:** This script creates `.copilot_last_init` timestamp file so Claude Code can verify your initialization.
+
+---
 
 ## Purpose
 This guide defines **how** GitHub Copilot should operate when working on the RDG Translation Project.

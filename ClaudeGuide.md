@@ -1,5 +1,16 @@
-<!-- Claude Code Operations Guide – Last Updated: 12/04/2025 -->
+<!-- Claude Code Operations Guide – Last Updated: 12/06/2025 -->
 # Claude Code Operations Guide
+
+## Quick Start - Run This First
+
+**Initialization Script:**
+```bash
+/home/scott/gitrepos/rdgtrans/scripts/read_docs.sh
+```
+
+Then read `sharedContext.md` before proceeding.
+
+---
 
 ## Purpose
 This guide defines **how** Claude Code should operate when working on the RDG Translation Project.
